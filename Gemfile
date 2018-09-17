@@ -19,7 +19,6 @@ group :test, :development do
   gem "capybara"
   gem "selenium-webdriver"
   gem 'ffaker'
-  gem 'shoulda'
   gem 'shoulda-matchers'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
