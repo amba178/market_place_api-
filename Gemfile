@@ -7,9 +7,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
+gem 'devise'
 
 
 group :test, :development do
@@ -23,6 +21,13 @@ group :test, :development do
   gem 'ffaker'
   gem 'shoulda'
   gem 'shoulda-matchers'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+end
+
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
 
 
