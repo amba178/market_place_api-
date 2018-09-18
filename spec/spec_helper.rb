@@ -61,7 +61,10 @@ RSpec.configure do |config|
   # substitute should for expect
 
   config.include Request::JsonHelpers, :type => :controller
-   
+  config.include Request::HeadersHelpers, :type => :controller
+  config.before(:each, type: :controller) do 
+    include_default_accept_headers
+  end 
   RSpec.configure do |config|
     config.expect_with :rspec do |expectations|
       expectations.syntax = [:should, :expect]

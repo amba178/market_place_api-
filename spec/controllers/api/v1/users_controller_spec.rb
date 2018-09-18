@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Api::V1::UsersController do
     
     #Mime::JSON replaced with 'application/json'
-	before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, applicaion/json"} 
-	before(:each) { request.headers['Content-Type'] = "application/json"}
+	# before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1, applicaion/json"} 
+	# before(:each) { request.headers['Content-Type'] = "application/json"}
 
 describe "POST #create " do 
 
