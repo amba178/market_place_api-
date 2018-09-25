@@ -71,6 +71,12 @@ RSpec.configure do |config|
     end
   end
 
+  RSpec.configure do |config| 
+    config.mock_with :rspec do |mocks|
+      mocks.syntax = :should 
+    end
+  end
+
 
   config.infer_spec_type_from_file_location!
   Shoulda::Matchers.configure do |config|
