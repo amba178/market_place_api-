@@ -62,6 +62,7 @@ end
     context "when is successfully updated" do
       before(:each) do
         @user = FactoryBot.create :user
+        request.headers['Authorizaton'] = @user.auth_token
         patch :update, params: { id: @user.id,
                          user: { email: "newmail@example.com" } }, format: :json
       end
@@ -77,7 +78,8 @@ end
     context "when is not created" do
       before(:each) do
         @user = FactoryBot.create :user
-       patch :update, params: { id: @user.id,
+        request.headers['Authorizaton'] = @user.auth_token
+        patch :update, params: { id: @user.id,
                          user: { email: "newmail.com" } }, format: :json
       end
 
@@ -99,6 +101,7 @@ end
   describe "DELETE #destroy" do
  	 before(:each) do
     	@user = FactoryBot.create :user
+    	request.headers['Authorizaton'] = @user.auth_token
     	delete :destroy, params: { id: @user.id }, format: :json
   	end
   	it { should respond_with 204} 

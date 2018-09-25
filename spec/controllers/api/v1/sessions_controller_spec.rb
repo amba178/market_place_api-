@@ -44,7 +44,7 @@ describe Api::V1::SessionsController, type: :controller do
 	describe "DELETE #destroy" do 
 		before(:each) do 
 			@user = FactoryBot.create :user 
-			sign_in @user  
+			api_authorization_header @user.auth_token 
 			delete :destroy , params: { id: @user.auth_token }, format: :json 
 		end
 
