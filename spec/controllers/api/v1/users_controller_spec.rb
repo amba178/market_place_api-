@@ -14,6 +14,11 @@ describe "POST #create " do
   		   post :create, params:  { user: @user_attributes} , format: :json
   	    end
 
+        it "has the product ids as an embeded object" do 
+          user_response = json_response 
+          byebug
+        end
+
   	    it "renders the json representation for the user record just created" do
         	user_response = json_response
         	expect(user_response[:email]).to eql @user_attributes[:email]
